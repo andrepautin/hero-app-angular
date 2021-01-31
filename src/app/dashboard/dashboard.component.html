@@ -1,0 +1,16 @@
+<!-- when + clicked, heroName.value from <input/> passed into addHero() in dashboard component -->
+<!-- dashboard passes heroName as string into addHero() in heroService -->
+<!-- heroService sends post request to server with data to be added from user -->
+<h3 style="text-align: left;">Add a Hero!</h3> <br/>
+<button (click)="addHero()">+</button> &nbsp;
+<input #heroName placeholder="Asa Akira"/>
+<h2 style="text-align: center;" class="badge">Top Heroes</h2>
+<div class="grid grid-pad">
+  <a *ngFor="let hero of slicedHeroes" class="col-1-4"
+   routerLink="/detail/{{hero.id}}">
+    <div class="module hero">
+      <h4>{{hero.name}}</h4>
+    </div>
+  </a>
+</div>
+<button class="module hero" (click)="loadMore()">load more</button>

@@ -1,0 +1,18 @@
+<h3 class="badge">{{hero.name | uppercase}} Details</h3>
+<p>heroId = {{hero.id}}</p>
+<p *ngIf="!isEditing" (click)="clickName()">
+	heroName = {{hero.name}}
+</p>
+<div *ngIf="isEditing">
+	<input #newName [value]="hero.name"/> &nbsp;
+	<!-- click event updatedHero() for save function -->
+	<button (click)="updateHero()">save</button>
+</div>
+<div>	
+<!-- click event deletedHero() -->
+	<button (click)="deleteHero()">
+			delete hero
+	</button>
+</div>
+<br/>
+<button (click)="goBack()">go back</button>
